@@ -1,0 +1,24 @@
+.sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: calc(20% - 16px);
+    height: 100vh;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-top-right-radius: 15px;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.sidebar-wrapper h1 {
+    color: white;
+}
+
+.sidebar-projects-btn { 
+    margin-top: 15px;
+    opacity: 0.5;
+}

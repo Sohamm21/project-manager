@@ -1,0 +1,6 @@
+.project-wrapper {
+    width: calc(80% + 16px);
+    height: 100vh;
+    margin-left: calc(20% - 16px);
+    overflow-y: auto;
+}
