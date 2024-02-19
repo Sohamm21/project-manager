@@ -1,24 +1,27 @@
 import React from "react";
 import "./index.css";
-import AddNewProject from "../project/newProject";
 
 export const Sidebar = ({
-  isAddingNewProject,
   setIsAddingNewProject,
   projectsData,
+  setShowTasks,
+  setSelectedProjectId,
 }) => {
   const handleProjectSelect = (id) => {
-    console.log();
+    setShowTasks(true);
+    setIsAddingNewProject(false);
+    setSelectedProjectId(id);
   }
 
   return (
     <div className="sidebar-wrapper mt-5">
-      <h1>Projects</h1>
+      <h1 className="mt-5">Projects</h1>
       <button
         type="button"
         className="btn btn-secondary sidebar-projects-btn mb-2"
         onClick={() => {
           setIsAddingNewProject(true);
+          setShowTasks(false);
         }}
       >
         + Add Project

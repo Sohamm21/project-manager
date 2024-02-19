@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./index.css";
 import AddNewProject from "./newProject";
+import Tasks from "./tasks";
 
 const Project = ({
   isAddingNewProject,
   setIsAddingNewProject,
   projectsData,
   setProjectsData,
+  showTasks,
+  setShowTasks,
+  selectedProjectId,
 }) => {
   const noProjectSelected = () => {
     return (
@@ -19,23 +23,25 @@ const Project = ({
           className="btn btn-dark mt-3"
           onClick={() => {
             setIsAddingNewProject(true);
+            setShowTasks(false);
           }}
         >
           Create new project
         </button>
       </div>
     );
-  };
+  };;
   return (
     <div className="project-wrapper d-flex justify-content-center align-items-center">
-      {!isAddingNewProject && noProjectSelected()}
-      {isAddingNewProject && (
+      {!isAddingNewProject && !showTasks && noProjectSelected()}
+      {isAddingNewProject && !showTasks && (
         <AddNewProject
           setIsAddingNewProject={setIsAddingNewProject}
           projectsData={projectsData}
           setProjectsData={setProjectsData}
         />
       )}
+      {showTasks && !isAddingNewProject && <Tasks projectsData={projectsData} selectedProjectId={selectedProjectId} setProjectsData={setProjectsData}/>}
     </div>
   );
 };
