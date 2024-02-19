@@ -4,3 +4,8 @@
     margin-left: calc(20% - 16px);
     overflow-y: auto;
 }
+
+.project-input-wrapper {
+    width: 80%;
+    padding-right: 10%;
+}
