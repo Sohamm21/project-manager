@@ -6,6 +6,7 @@ export const Sidebar = ({
   projectsData,
   setShowTasks,
   setSelectedProjectId,
+  isAddingNewProject,
 }) => {
   const handleProjectSelect = (id) => {
     setShowTasks(true);
@@ -23,6 +24,7 @@ export const Sidebar = ({
           setIsAddingNewProject(true);
           setShowTasks(false);
         }}
+        disabled={isAddingNewProject}
       >
         + Add Project
       </button>

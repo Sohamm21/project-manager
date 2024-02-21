@@ -1,37 +1,108 @@
 .project-wrapper {
-    width: calc(70% + 16px);
-    height: 100vh;
-    overflow-y: auto;
-    margin-left: calc(30% - 16px);
+  width: calc(70% + 16px);
+  height: 100vh;
+  overflow-y: auto;
+  margin-left: calc(30% - 16px);
 }
 
 .project-input-wrapper {
-    width: 80%;
-    padding-right: 10%;
+  width: 80%;
+  padding-right: 10%;
 }
 
 .tasks-container {
-    width: 100%;
-    height: 100%;
-    margin-top: 15rem;
-    padding: 0 5%;
+  width: 100%;
+  height: 60%;
+  margin-top: 4rem;
+  padding: 0 5%;
 }
 
 .tasks-header h1,
 .tasks-header button {
   display: inline-block;
-  vertical-align: middle; 
-  margin-right: 10%; 
+  vertical-align: middle;
+}
+
+.tasks-header button {
+  margin-left: 41%;
 }
 
 .tasks-wrapper {
-    /* background-color: rgb(169, 169, 169, 0.9); */
-    margin-top: 1rem;
-    .task {
-        background-color: rgb(169, 169, 169, 0.9);
-        margin-bottom: 7px;
-        height: 2rem;
-        padding-left: 10px;
-        border-radius: 7px;
+  overflow-y: auto;
+  max-height: 70%;
+  /* background-color: rgb(169, 169, 169, 0.9); */
+  margin-top: 1rem;
+  width: 80%;
+  .task {
+    background-color: rgb(169, 169, 169, 0.9);
+    margin-bottom: 7px;
+    height: 3rem;
+    padding-left: 10px;
+    border-radius: 7px;
+    width: 99%;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+
+    .task-text {
+      flex: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
+
+    .delete-btn {
+      height: 40%;
+    }
+    .delete-btn:hover {
+      cursor: pointer;
+      animation: shake-animation 4.72s ease infinite;
+      transform-origin: 30% 30%;
+    }
+  }
+}
+
+#scrollbar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+#scrollbar::-webkit-scrollbar {
+  width: 7px;
+  background-color: #f5f5f5;
+}
+
+#scrollbar::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border: 1px solid rgb(85, 85, 85, 0.5);
+}
+
+@keyframes shake-animation {
+  0% {
+    transform: translate(0, 0);
+  }
+  1.78571% {
+    transform: translate(3px, 0);
+  }
+  3.57143% {
+    transform: translate(0, 0);
+  }
+  5.35714% {
+    transform: translate(3px, 0);
+  }
+  7.14286% {
+    transform: translate(0, 0);
+  }
+  8.92857% {
+    transform: translate(3px, 0);
+  }
+  10.71429% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }

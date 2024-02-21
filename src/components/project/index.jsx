@@ -30,7 +30,7 @@ const Project = ({
         </button>
       </div>
     );
-  };;
+  };
   return (
     <div className="project-wrapper d-flex justify-content-center align-items-center">
       {!isAddingNewProject && !showTasks && noProjectSelected()}
@@ -41,7 +41,15 @@ const Project = ({
           setProjectsData={setProjectsData}
         />
       )}
-      {showTasks && !isAddingNewProject && <Tasks projectsData={projectsData} selectedProjectId={selectedProjectId} setProjectsData={setProjectsData}/>}
+      {showTasks && !isAddingNewProject && (
+        <Tasks
+          projectsData={projectsData}
+          selectedProjectId={selectedProjectId}
+          setProjectsData={setProjectsData}
+          setShowTasks={setShowTasks}
+          setIsAddingNewProject={setIsAddingNewProject}
+        />
+      )}
     </div>
   );
 };
